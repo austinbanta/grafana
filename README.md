@@ -3,6 +3,8 @@
 
 The open-source platform for monitoring and observability
 
+> **Note:** This is a personal development fork of [grafana/grafana](https://github.com/grafana/grafana). Use it for local experiments. Changes that belong upstream should still go to Grafana Labs.
+
 [![License](https://img.shields.io/github/license/grafana/grafana)](LICENSE)
 
 Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored. Create, explore, and share dashboards with your team and foster a data-driven culture:
@@ -18,6 +20,7 @@ Grafana allows you to query, visualize, alert on and understand your metrics no 
 
 - [Get Grafana](https://grafana.com/get)
 - [Installation guides](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
+- **Local development:** `yarn install --immutable`, then `yarn start` and `make run`. Open [http://localhost:3000](http://localhost:3000) and log in with `admin` / `admin`.
 
 Unsure if Grafana is for you? Watch Grafana in action on [play.grafana.org](https://play.grafana.org/)!
 
