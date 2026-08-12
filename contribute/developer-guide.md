@@ -160,6 +160,8 @@ Log in using the default credentials:
 
 When you log in for the first time, Grafana asks you to change your password.
 
+You can set a new password or click **Skip** to keep `admin` for local development. The default backend uses an embedded SQLite database (`data/grafana.db`); no extra database process is required.
+
 #### CGO and static builds
 
 By default, `make build-go` (and `make run`) does **not** set `CGO_ENABLED`. Go's default behavior is to enable CGO when a C compiler (GCC) is detected on the system, and disable it otherwise. For local development this is fine — CGO gives you a working SQLite driver for the embedded database.
