@@ -11,3 +11,5 @@ If you require further help or support then ask a question in the [Grafana commu
 - The Grafana project uses GitHub mainly for tracking bugs and feature requests.
 - Do not open an issue just to ask a question. The issue will be closed immediately.
 - Only submit issues for bug reports, feature requests, or enhancements.
+
+If you are working in this fork, prefer commenting on the relevant pull request instead of opening an upstream issue for local experiments.
