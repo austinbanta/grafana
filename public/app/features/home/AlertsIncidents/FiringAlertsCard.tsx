@@ -51,7 +51,7 @@ function severityLabel(level?: SeverityLevel): string {
  */
 function emptyMessage(selectedTeam: string | undefined, hasTeams: boolean): string {
   if (selectedTeam === ALL_VARIABLE_VALUE) {
-    return t('home.firing-alerts-card.empty', 'You have no firing alerts.');
+    return t('home.firing-alerts-card.empty', 'No firing alerts right now.');
   }
   if (selectedTeam) {
     return t('home.firing-alerts-card.empty-selected-team', 'No firing alerts for {{team}}.', {
@@ -62,7 +62,7 @@ function emptyMessage(selectedTeam: string | undefined, hasTeams: boolean): stri
   if (hasTeams) {
     return t('home.firing-alerts-card.empty-teams', 'No firing alerts for your teams.');
   }
-  return t('home.firing-alerts-card.empty', 'You have no firing alerts.');
+  return t('home.firing-alerts-card.empty', 'No firing alerts right now.');
 }
 
 /** Render-only card body; data comes from useFiringAlerts so callers control where the hook runs. */

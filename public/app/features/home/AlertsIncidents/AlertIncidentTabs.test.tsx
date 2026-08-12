@@ -561,7 +561,7 @@ describe('AlertIncidentTabs', () => {
       await user.click(await screen.findByRole('option', { name: 'All teams' }));
 
       // The sentinel never leaks into copy; the generic empty message is used.
-      expect(await screen.findByText('You have no firing alerts.')).toBeInTheDocument();
+      expect(await screen.findByText('No firing alerts right now.')).toBeInTheDocument();
       expect(screen.queryByText(/No firing alerts for/)).not.toBeInTheDocument();
     });
 

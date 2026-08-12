@@ -222,7 +222,7 @@ describe('FiringAlertsCard', () => {
 
     render(<FiringAlertsCardWithData />);
 
-    expect(await screen.findByText('You have no firing alerts.')).toBeInTheDocument();
+    expect(await screen.findByText('No firing alerts right now.')).toBeInTheDocument();
   });
 
   it('caps the rendered list at HOME_CARD_MAX_ITEMS while badges count every alert', async () => {
@@ -281,7 +281,7 @@ describe('FiringAlertsCard', () => {
       'href',
       '/alerting/new/alerting'
     );
-    expect(screen.getByText('You have no firing alerts.')).toBeInTheDocument();
+    expect(screen.getByText('No firing alerts right now.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /view all alert rules/i })).toBeInTheDocument();
   });
 
