@@ -50,7 +50,7 @@ export function RecentDashboardsTab({ dashboards, loading, error, retry, folders
         <EmptyState
           hideImage
           variant="call-to-action"
-          message={t('home.recent-dashboards-tab.empty', "Dashboards you've recently viewed will appear here.")}
+          message={t('home.recent-dashboards-tab.empty', 'No recently viewed dashboards yet.')}
           button={
             canCreate ? (
               <LinkButton
@@ -77,8 +77,7 @@ export function RecentDashboardsTab({ dashboards, loading, error, retry, folders
           }
         >
           <Trans i18nKey="home.recent-dashboards-tab.empty-description">
-            After you&apos;ve connected data, you can use dashboards to query and visualize your data with charts, stats
-            and tables or create lists, markdowns and other widgets.
+            After you connect a data source, use dashboards to query and visualize it with charts, stats, and tables.
           </Trans>
         </EmptyState>
       </Stack>
