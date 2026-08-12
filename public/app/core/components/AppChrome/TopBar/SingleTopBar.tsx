@@ -126,7 +126,7 @@ const getStyles = (theme: GrafanaTheme2, menuDockedAndOpen: boolean, visualRefre
     alignItems: 'center',
     padding: theme.spacing(0, 1),
     paddingLeft: menuDockedAndOpen ? theme.spacing(visualRefreshEnabled ? 0.5 : 3.5) : theme.spacing(0.75),
-    borderBottom: visualRefreshEnabled ? undefined : `1px solid ${theme.colors.border.weak}`,
+    borderBottom: `1px solid ${theme.colors.border.medium}`,
     justifyContent: 'space-between',
   }),
   breadcrumbsWrapper: css({
