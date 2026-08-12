@@ -152,7 +152,7 @@ describe('DashboardTabs', () => {
   it('shows empty state when no recent dashboards', async () => {
     render(<DashboardTabs extensionComponents={[]} />);
 
-    expect(await screen.findByText("Dashboards you've recently viewed will appear here.")).toBeInTheDocument();
+    expect(await screen.findByText('No recently viewed dashboards yet.')).toBeInTheDocument();
   });
 
   it('shows empty state when no starred dashboards', async () => {
