@@ -84,7 +84,7 @@ export const SingleTopBar = memo(function SingleTopBar({
               </Stack>
             </ToolbarButton>
           )}
-          {!menuDockedAndOpen && <HomeLogo homeNav={homeNav} />}
+          {!menuDockedAndOpen && <HomeLogo homeNav={homeNav} showWordmark />}
           {topLevelScopes ? <ScopesSelector /> : undefined}
           <Breadcrumbs breadcrumbs={breadcrumbs} className={styles.breadcrumbsWrapper} />
           {!showToolbarLevel && breadcrumbActions}

@@ -50,12 +50,20 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
   return <div className={cx(background, className)}>{children}</div>;
 };
 
-const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src={grafanaIconSvg} alt="Grafana" />;
+const MenuLogo: FC<BrandComponentProps & { alt?: string }> = ({ className, alt = 'Grafana' }) => {
+  return <img className={className} src={grafanaIconSvg} alt={alt} />;
 };
 
-export function HomeLogo({ homeNav, onClick }: { homeNav?: NavModelItem; onClick?: () => void }) {
-  const styles = useStyles2(homeLogoStyles);
+export function HomeLogo({
+  homeNav,
+  onClick,
+  showWordmark,
+}: {
+  homeNav?: NavModelItem;
+  onClick?: () => void;
+  showWordmark?: boolean;
+}) {
+  const styles = useStyles2(homeLogoStyles, Boolean(showWordmark));
 
   const onHomeClicked = () => {
     reportInteraction('grafana_home_clicked');
@@ -71,25 +79,39 @@ export function HomeLogo({ homeNav, onClick }: { homeNav?: NavModelItem; onClick
         title={homeNav?.text || 'Home'}
         href={homeNav?.url}
       >
-        <Branding.MenuLogo />
+        <Branding.MenuLogo alt={showWordmark ? '' : 'Grafana'} />
+        {showWordmark && <span className={styles.wordmark}>{Branding.AppTitle}</span>}
       </a>
     </Tooltip>
   );
 }
 
-function homeLogoStyles(theme: GrafanaTheme2) {
+function homeLogoStyles(theme: GrafanaTheme2, showWordmark: boolean) {
   return {
     homeLogo: css({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       height: theme.spacing(3),
-      width: theme.spacing(3),
+      width: showWordmark ? 'auto' : theme.spacing(3),
+      gap: showWordmark ? theme.spacing(1) : undefined,
       margin: theme.spacing(0, 0.5),
+      textDecoration: 'none',
       img: {
+        height: '100%',
+        width: showWordmark ? theme.spacing(3) : 'auto',
         maxHeight: '100%',
-        maxWidth: '100%',
+        maxWidth: showWordmark ? theme.spacing(3) : '100%',
+        flexShrink: 0,
       },
+    }),
+    wordmark: css({
+      color: theme.colors.text.primary,
+      fontSize: theme.typography.h5.fontSize,
+      fontWeight: theme.typography.fontWeightMedium,
+      letterSpacing: '-0.02em',
+      lineHeight: 1,
+      whiteSpace: 'nowrap',
     }),
   };
 }
