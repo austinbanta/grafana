@@ -30,7 +30,7 @@ export const TopSearchBarCommandPaletteTrigger = React.memo(() => {
         <ToolbarButton
           iconOnly
           icon="search"
-          aria-label={t('nav.search.placeholderCommandPalette', 'Search...')}
+          aria-label={t('nav.search.placeholderCommandPalette', 'Search dashboards and apps...')}
           onClick={onOpenSearch}
         />
         <NavToolbarSeparator />
@@ -62,7 +62,7 @@ function PretendTextInput({ onClick }: PretendTextInputProps) {
         </div>
 
         <button className={styles.fakeInput} onClick={onClick}>
-          {t('nav.search.placeholderCommandPalette', 'Search...')}
+          {t('nav.search.placeholderCommandPalette', 'Search dashboards and apps...')}
         </button>
 
         <div className={styles.suffix}>
